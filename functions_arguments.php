@@ -1,5 +1,5 @@
 <?php 
-    define( "TITLE", "If, Else &amp; Elseif Statements");
+    define( "TITLE", "Functions &amp; Arguments");
 
 ?>
 <!DOCTYPE html>
@@ -27,44 +27,34 @@
             <h1><?php echo TITLE; ?></h1>
 
             <?php 
-            //IF expression is True, do something
-            //IF expression is FALSE, don't do anything
-            
-                $foo = 99;
-                $bar = 79;
-            
-                if( $foo > $bar){
-                 //code to execute if true
-                    echo '$foo is greater than $bar'."<br>";
-                    //double quotes will allow value of variable to be output
-                    //single quotes will output just text 
+                
+                function myFirstFunction(){
+                    $a = 0;
+                    do {
+                        echo "$a &nbsp";
+                        $a++;
+                    }while($a <= 100);
                 }
-                //else
-                $currentlyListeningTo = "Barenaked Ladies";
+                //call the function
+                myFirstFunction();
             
-                if ($currentlyListingTo == "The Tragically Hip"){
-                    //if true
-                    echo "You are listening to $currentlyListeningTo";
-                }else {
-                    //if false
-                    echo "Just a wild guess but you are probably listening to $currentlyListeningTo </br>";
+            
+                function mySecondFunction( $a ){
+                    do{
+                        echo "$a &nbsp;";
+                        $a++;
+                    }while($a <= 10);
                 }
+                mySecondFunction(5);
             
-                //elseif
-                $favColor = "green";
-                if ($favColor == "blue"){
-                    //original expression = true
-                    echo "Your favorite color is $favColor.";
-                }elseif ($favColor == "green"){
-                    //original expression = false. elseif expression = true
-                    echo "the color $favColor is a bad choice.";
-                }else{
-                    //both if and elseif =false
-                    echo "$favColor is the best color of them all!";
-                }
-            
+            function addTogether( $num1, $num2){
+                $newNum = $num1 + $num2;
+                echo "$num1 + $num2 = $newNum";
+            }
+            addTogether( 39, 128 );
             
             ?>
+            
         </div>
     <!--jQuery -->
     <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
